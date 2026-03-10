@@ -63,5 +63,4 @@ This project helped me:
 
 ## Acknowledgements
 
-- **Tutorial:** Kylie Ying   
--
+- **Tutorial:** Kylie Ying  
