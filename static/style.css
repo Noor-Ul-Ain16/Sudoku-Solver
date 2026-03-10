@@ -1,0 +1,101 @@
+
+body {
+padding:0px;
+display:flex;
+flex-direction:column;
+align-items:center;
+background:linear-gradient(135deg,#f3f6fa88,#f7f9fc);
+font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+}
+
+h1{
+color:limegreen;
+font-size:2.5rem;
+margin-bottom:0.05em;
+text-align:center;
+}
+
+.grid{
+border-collapse:collapse;
+}
+
+input{
+width:2em;
+height:2em;
+text-align:center;
+font-size:1.25rem;
+font-weight:bold;
+border-collapse:collapse;
+}
+
+input:focus{
+border:2px solid limegreen;
+}
+
+td{
+border-collapse:collapse;
+}
+
+td:nth-child(3),
+td:nth-child(6),
+td:nth-child(9){
+border-right:3px solid black;
+}
+
+tr:nth-child(3) td,
+tr:nth-child(6) td,
+tr:nth-child(9) td{
+border-bottom:3px solid black;
+}
+
+.button-container{
+display:flex;
+margin-top:1rem;
+gap:3em;
+height:6vh;
+justify-content:center;
+}
+
+.btn{
+background-color:linear-gradient(135deg,#f3f6fa52,#f7f9fc);
+color:grey;
+width:17vh;
+border:1px solid black;
+border-radius:5px;
+cursor:pointer;
+font-size:medium;
+transition:0.3s;
+}
+
+#sol_btn{
+background:linear-gradient(135deg,#1baf59c4,#81dbb5);
+color:white;
+}
+
+.btn:hover{
+background:linear-gradient(135deg,#d1d5db9a,#e0e7ff80);
+}
+
+#sol_btn:hover{
+background:linear-gradient(135deg,#1aa554de,#69e2b0);
+}
+
+.solver-cell{
+color:black;
+font-weight:bold;
+}
+
+.user-cell{
+color:limegreen;
+}
+
+.invalid-cell{
+color:red;
+border:2px solid red;
+}
+
+.message{
+margin-top:2.5px;
+font-weight:bold;
+color:red;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku Solver</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Sudoku Solver</h1>
+
+<p>Enter your Sudoku puzzle in the grid below. Leave empty cells blank. Press Solve when done.</p>
+
+{% if message %}
+<p class="message">{{message}}</p>
+{% endif %}
+
+<form method="POST" action="{{url_for('check')}}">
+
+<table class="grid" style="border:3px solid;">
+
+{% for row in range(9) %}
+<tr>
+
+{% for col in range(9) %}
+<td>
+
+<input type="number"
+min="1"
+max="9"
+name="cell-{{row}}-{{col}}"
+
+value="{{ puzzle[row][col] if puzzle and puzzle[row][col] != -1 else '' }}"
+
+class="
+{% if invalid_cells and (row,col) in invalid_cells %}
+invalid-cell
+{% elif original and puzzle[row][col] == original[row][col] %}
+user-cell
+{% else %}
+solver-cell
+{% endif %}
+">
+
+</td>
+{% endfor %}
+
+</tr>
+{% endfor %}
+
+</table>
+
+<div class="button-container">
+<button type="submit" name="action" value="clear-all" class="btn">Clear All</button>
+<button type="submit" name="action" value="solve" class="btn" id="sol_btn"><b>Solve</b></button>
+</div>
+
+</form>
+
+</body>
+</html>
